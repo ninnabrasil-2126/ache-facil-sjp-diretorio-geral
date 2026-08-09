@@ -21,6 +21,11 @@
     --cream-muted: #9C8B78;
     --terracotta: #C5502A;
     --border-gold: rgba(217,169,74,0.28);
+    --offwhite: #F7F1E3;
+    --offwhite-2: #EFE6D0;
+    --ink-on-offwhite: #2A1D15;
+    --ink-muted-on-offwhite: #6B5842;
+    --border-offwhite: rgba(184,134,47,0.25);
     --radius-lg: 22px; --radius-md: 14px; --radius-sm: 20px;
   }
   * { box-sizing: border-box; }
@@ -67,37 +72,37 @@
 
   .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
   @media (max-width: 420px) { .stats { grid-template-columns: 1fr; } }
-  .stat-card { background: var(--ink-card); border: 1px solid var(--border-gold); border-radius: var(--radius-md); padding: 18px 14px; text-align: center; }
-  .stat-card .num { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 600; color: var(--gold-300); margin: 8px 0 0; }
-  .stat-card .label { font-size: 11px; color: var(--cream-muted); margin: 4px 0 0; text-transform: uppercase; letter-spacing: 0.6px; }
+  .stat-card { background: var(--offwhite); border: 1px solid var(--border-offwhite); border-radius: var(--radius-md); padding: 18px 14px; text-align: center; box-shadow: 0 4px 14px rgba(0,0,0,0.18); }
+  .stat-card .num { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 600; color: var(--terracotta); margin: 8px 0 0; }
+  .stat-card .label { font-size: 11px; color: var(--ink-muted-on-offwhite); margin: 4px 0 0; text-transform: uppercase; letter-spacing: 0.6px; }
 
-  .cat-menu { border: 1px solid var(--border-gold); border-radius: var(--radius-md); overflow: hidden; background: var(--ink-card); }
+  .cat-menu { border: 1px solid var(--border-offwhite); border-radius: var(--radius-md); overflow: hidden; background: var(--offwhite); box-shadow: 0 4px 14px rgba(0,0,0,0.18); }
   .cat-menu-toggle { width: 100%; display: flex; align-items: center; gap: 12px; padding: 18px 20px; background: transparent; border: none; cursor: pointer; font-family: inherit; text-align: left; }
-  .cat-menu-icon { width: 34px; height: 34px; border-radius: 10px; background: rgba(217,169,74,0.15); color: var(--gold-300); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .cat-menu-title { font-family: 'Fraunces', serif; font-weight: 600; font-size: 16px; color: var(--cream); margin: 0; flex: 1; }
-  .cat-menu-count { font-size: 12px; color: var(--cream-muted); }
-  .cat-menu-body { display: none; padding: 16px 20px 20px; background: var(--ink-card-2); border-top: 1px solid var(--border-gold); }
+  .cat-menu-icon { width: 34px; height: 34px; border-radius: 10px; background: rgba(184,134,47,0.15); color: var(--gold-700); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .cat-menu-title { font-family: 'Fraunces', serif; font-weight: 600; font-size: 16px; color: var(--ink-on-offwhite); margin: 0; flex: 1; }
+  .cat-menu-count { font-size: 12px; color: var(--ink-muted-on-offwhite); }
+  .cat-menu-body { display: none; padding: 16px 20px 20px; background: var(--offwhite-2); border-top: 1px solid var(--border-offwhite); }
   .cat-menu.open .cat-menu-body { display: block; }
   .cat-menu.open .cat-menu-chevron { transform: rotate(180deg); }
   .cat-menu-chevron { transition: transform 0.15s ease; flex-shrink: 0; }
 
   .search-box { position: relative; margin-bottom: 16px; }
   .search-box svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); pointer-events: none; }
-  .search-box input { width: 100%; font-family: inherit; font-size: 14px; padding: 11px 14px 11px 40px; border-radius: var(--radius-sm); border: 1px solid var(--border-gold); background: var(--ink-deep); color: var(--cream); min-height: 44px; }
-  .search-box input::placeholder { color: var(--cream-muted); }
-  .search-box input:focus { outline: none; border-color: var(--gold-500); }
+  .search-box input { width: 100%; font-family: inherit; font-size: 14px; padding: 11px 14px 11px 40px; border-radius: var(--radius-sm); border: 1px solid var(--border-offwhite); background: #fff; color: var(--ink-on-offwhite); min-height: 44px; }
+  .search-box input::placeholder { color: var(--ink-muted-on-offwhite); }
+  .search-box input:focus { outline: none; border-color: var(--gold-700); }
 
-  .bairro-row { background: var(--ink-card); border: 1px solid var(--border-gold); border-radius: var(--radius-md); padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+  .bairro-row { background: var(--offwhite); border: 1px solid var(--border-offwhite); border-radius: var(--radius-md); padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.18); }
   .bairro-row:last-child { margin-bottom: 0; }
   .bairro-row .info { min-width: 0; }
-  .bairro-row .nome { font-family: 'Fraunces', serif; font-weight: 600; font-size: 15px; color: var(--cream); margin: 0; }
-  .bairro-row .vilas { font-size: 12px; color: var(--cream-muted); margin: 4px 0 0; }
-  .bairro-row .acessar { flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; background: var(--gold-500); color: var(--ink-deep); font-size: 12px; font-weight: 600; padding: 9px 16px; border-radius: 20px; text-decoration: none; white-space: nowrap; }
-  .bairro-row.em-breve { opacity: 0.55; }
-  .bairro-row .badge-em-breve { flex-shrink: 0; font-size: 11px; color: var(--cream-muted); background: rgba(217,169,74,0.1); padding: 6px 12px; border-radius: 20px; white-space: nowrap; }
+  .bairro-row .nome { font-family: 'Fraunces', serif; font-weight: 600; font-size: 15px; color: var(--ink-on-offwhite); margin: 0; }
+  .bairro-row .vilas { font-size: 12px; color: var(--ink-muted-on-offwhite); margin: 4px 0 0; }
+  .bairro-row .acessar { flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; background: var(--gold-700); color: #fff; font-size: 12px; font-weight: 600; padding: 9px 16px; border-radius: 20px; text-decoration: none; white-space: nowrap; }
+  .bairro-row.em-breve { opacity: 0.65; }
+  .bairro-row .badge-em-breve { flex-shrink: 0; font-size: 11px; color: var(--ink-muted-on-offwhite); background: rgba(184,134,47,0.15); padding: 6px 12px; border-radius: 20px; white-space: nowrap; }
 
-  .empty-search { text-align: center; padding: 28px 16px; color: var(--cream-muted); font-size: 13px; }
-  .empty-search p.big { font-family: 'Fraunces', serif; font-size: 17px; color: var(--cream); margin: 0 0 4px; }
+  .empty-search { text-align: center; padding: 28px 16px; color: var(--ink-muted-on-offwhite); font-size: 13px; }
+  .empty-search p.big { font-family: 'Fraunces', serif; font-size: 17px; color: var(--ink-on-offwhite); margin: 0 0 4px; }
 
   footer.bottombar { background: rgba(20,14,10,0.55); border-top: 1px solid var(--border-gold); padding: 18px 26px; display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: 12px; color: var(--cream-soft); }
   footer.bottombar .ig { display: flex; align-items: center; gap: 6px; }
@@ -162,11 +167,11 @@
         </span>
         <p class="cat-menu-title">Bairros e regiões</p>
         <span class="cat-menu-count" id="cat-menu-count">1</span>
-        <svg class="cat-menu-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9BBA8" stroke-width="2" style="transition: transform 0.15s ease;"><path d="M6 9l6 6 6-6"/></svg>
+        <svg class="cat-menu-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B5842" stroke-width="2" style="transition: transform 0.15s ease;"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="cat-menu-body" id="cat-menu-body">
         <div class="search-box">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9BBA8" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B5842" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
           <input type="text" id="busca-bairro" placeholder="Busque o nome do bairro, região ou micro-região" oninput="filtrarBairros(this.value)">
         </div>
         <div id="bairros-container"></div>
