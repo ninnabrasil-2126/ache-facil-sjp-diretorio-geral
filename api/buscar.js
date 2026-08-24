@@ -25,7 +25,10 @@ async function carregarGuia() {
 
   const resp = await fetch(FONTE, { headers: { "Cache-Control": "no-cache" } });
   if (!resp.ok) throw new Error("Falha ao ler dados-guia.js: HTTP " + resp.status);
-  const codigo = await resp.text();
+  // Decodificar explicitamente como UTF-8: o runtime da Vercel leu como Latin-1
+  // mesmo com charset=utf-8 no cabeçalho, e os acentos vinham corrompidos.
+  const bytes = await resp.arrayBuffer();
+  const codigo = new TextDecoder("utf-8").decode(bytes);
 
   // O arquivo é uma IIFE que faz `global.GUIA = GUIA` recebendo `window`.
   const janelaFalsa = {};
